@@ -445,14 +445,17 @@ namespace Fylon
             int fail_Count_file = 0;
             int fail_Count_folder = 0;
             int fail_Count_Length = 0;
+            int fail_Count_ZeroLength = 0;
             int fail_Number_exist;
             int fail_Number_file;
             int fail_Number_folder;
             int fail_Number_Length;
+            int fail_Number_ZeroLength;
             string fail_List_exist = "";
             string fail_List_file = "";
             string fail_List_folder = "";
             string fail_List_Length = "";
+            string fail_List_ZeroLength = "";
             int error_count = 0;
 
             for (int i = 0; i < listView1.Items.Count; i++)
@@ -533,6 +536,23 @@ namespace Fylon
                             error_count++;
                         }
                     }
+                    else if (AddName.Length == 0 || AddName.Substring(AddName.LastIndexOf(".")).Length == 0)
+                    {
+                        fail_Count_ZeroLength++;
+                        fail_Number_ZeroLength = i + 1;
+                        if (fail_Count_ZeroLength > 1)
+                        {
+                            fail_List_ZeroLength = fail_List_ZeroLength + ", " + fail_Number_ZeroLength.ToString();
+                        }
+                        else if (fail_Count_ZeroLength == 1)
+                        {
+                            fail_List_ZeroLength = fail_Number_ZeroLength.ToString();
+                        }
+                        else
+                        {
+                            error_count++;
+                        }
+                    }
                     else if (FileExistsCheck(OldPath) == true)//파일 이름 변경
                     {
                         System.IO.File.Move(OldPath, NewPath);
@@ -587,6 +607,10 @@ namespace Fylon
             if (fail_Count_Length > 0)
             {
                 MessageBox.Show(fail_Count_Length + "개의 항목의 파일 이름이 너무 깁니다.\n" + fail_List_Length + "번째 항목이 변경되지 않았습니다.");
+            }
+            if (fail_Count_ZeroLength > 0)
+            {
+                MessageBox.Show(fail_Count_ZeroLength + "개의 항목의 변경할 파일 이름이 없습니다.\n" + fail_List_ZeroLength + "번째 항목이 변경되지 않았습니다.");
             }
 
             width_Resize();//너비 재조정
