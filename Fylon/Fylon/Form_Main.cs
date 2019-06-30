@@ -536,7 +536,7 @@ namespace Fylon
                             error_count++;
                         }
                     }
-                    else if (AddName.Length == 0 || AddName.Substring(AddName.LastIndexOf(".")).Length == 0)
+                    else if (AddName.Length == 0 || AddName.Substring(0, AddName.LastIndexOf(".")).Length == 0)
                     {
                         fail_Count_ZeroLength++;
                         fail_Number_ZeroLength = i + 1;
@@ -606,11 +606,11 @@ namespace Fylon
             }
             if (fail_Count_Length > 0)
             {
-                MessageBox.Show(fail_Count_Length + "개의 항목의 파일 이름이 너무 깁니다.\n" + fail_List_Length + "번째 항목이 변경되지 않았습니다.");
+                MessageBox.Show(fail_Count_Length + "개의 항목 이름이 너무 깁니다.\n" + fail_List_Length + "번째 항목이 변경되지 않았습니다.");
             }
             if (fail_Count_ZeroLength > 0)
             {
-                MessageBox.Show(fail_Count_ZeroLength + "개의 항목의 변경할 파일 이름이 없습니다.\n" + fail_List_ZeroLength + "번째 항목이 변경되지 않았습니다.");
+                MessageBox.Show(fail_Count_ZeroLength + "개의 항목의 변경할 이름이 없습니다.\n" + fail_List_ZeroLength + "번째 항목이 변경되지 않았습니다.");
             }
 
             width_Resize();//너비 재조정
