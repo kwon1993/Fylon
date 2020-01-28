@@ -536,6 +536,7 @@ namespace Fylon
                             error_count++;
                         }
                     }
+                    //이름 길이가 너무 짧은 경우
                     else if (FolderExistsCheck(OldPath) == true ? AddName.Length == 0 : AddName.Contains(".") ? AddName.Substring(0, AddName.LastIndexOf(".")).Length == 0 : AddName.Length == 0)
                     {
                         fail_Count_ZeroLength++;
