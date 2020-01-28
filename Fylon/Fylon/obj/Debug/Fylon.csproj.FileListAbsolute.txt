@@ -49,7 +49,6 @@ C:\Users\wdmon\Fylon_git\Fylon\Fylon\obj\Debug\Fylon.pdb
 C:\Users\wdmono\Fylon\Fylon\Fylon\bin\Debug\Fylon.exe.config
 C:\Users\wdmono\Fylon\Fylon\Fylon\bin\Debug\Fylon.exe
 C:\Users\wdmono\Fylon\Fylon\Fylon\bin\Debug\Fylon.pdb
-C:\Users\wdmono\Fylon\Fylon\Fylon\obj\Debug\Fylon.csprojAssemblyReference.cache
 C:\Users\wdmono\Fylon\Fylon\Fylon\obj\Debug\Fylon.Form_Extension.resources
 C:\Users\wdmono\Fylon\Fylon\Fylon\obj\Debug\Fylon.Form_Main.resources
 C:\Users\wdmono\Fylon\Fylon\Fylon\obj\Debug\Fylon.Form_AddString.resources

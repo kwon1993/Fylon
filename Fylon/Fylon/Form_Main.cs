@@ -519,7 +519,7 @@ namespace Fylon
                             error_count++;
                         }
                     }
-                    else if (NewPath.Length >= 260)
+                    else if (NewPath.Length >= 260)//이름 길이가 너무 길 경우
                     {
                         fail_Count_Length++;
                         fail_Number_Length = i + 1;
@@ -536,7 +536,7 @@ namespace Fylon
                             error_count++;
                         }
                     }
-                    else if (AddName.Length == 0 || AddName.Substring(0, AddName.LastIndexOf(".")).Length == 0)
+                    else if (FolderExistsCheck(OldPath) == true ? AddName.Length == 0 : AddName.Contains(".") ? AddName.Substring(0, AddName.LastIndexOf(".")).Length == 0 : AddName.Length == 0)
                     {
                         fail_Count_ZeroLength++;
                         fail_Number_ZeroLength = i + 1;
